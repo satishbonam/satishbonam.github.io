@@ -1,290 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <style type="text/css">
-        .topBox {
-            background: rgb(115, 135, 238);
-            padding: 140px 0;
-            margin-left: -8px;
-            margin-right: -15px;
-            margin-top: -75px;
-            transform: skew(0deg, -7deg) translateY(-20px);
-            position: relative;
-        }
+      .topBox {
+        background: rgb(115, 135, 238);
+        padding: 140px 0;
+        margin-left: -8px;
+        margin-right: -15px;
+        margin-top: -5px;
+        transform: skew(0deg, -7deg) translateY(-20px);
+        position: relative;
+        z-index: -1;
+      }
 
-        p {
-            font-family: 'Roboto';
-        }
+      p {
+        font-family: "Roboto";
+      }
+      .static-div {
+        height: 160px;
+        width: 160px;
+        border: 1rem rgb(115, 135, 238) inset;
+        font-size: x-large;
+        font-weight: bolder;
+      }
+      .color {
+        background-color: rgb(195, 203, 241);
+        color: black;
+      }
+      .link {
+        color: black;
+        text-decoration: none;
+        font-weight: bolder;
+      }
     </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Satish Bonam</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/github-calendar/1.3.1/github-calendar-responsive.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-calendar/1.3.1/github-calendar-responsive.css"
+    />
     <script src="https://unpkg.com/github-calendar@1.3.1/dist/github-calendar.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-expand-lg fixed-top color">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#nav"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          class="bi bi-menu-button-wide"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13zM14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-10a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"
+          />
+          <path
+            d="M12.823 2.823l-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0z"
+          />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <a class="navbar-brand link" href="#">Satish Bonam</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Skills <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#proficiency">Proficiency</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Statics">Statics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Github">GitHub Calender</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<body>
     <div class="topBox"></div>
-    <div class="jumbotron text-center mb-5"
-        style="background-color: rgba(233,236,239,0); margin-top: -220px; position: relative;">
+    <div
+      class="jumbotron text-center mb-5"
+      id="#"
+      style="
+        background-color: rgba(233, 236, 239, 0);
+        margin-top: -220px;
+        position: relative;
+      "
+    >
+      <p class="mb-4 justify-content-center">
+        <img
+          src="https://avatars3.githubusercontent.com/u/59553649?s=400&u=b369df2856234999cda364767954100ccfa86f2b&v=4"
+          style="
+            width: 200px;
+            border-radius: 100px;
+            border: 15px solid rgb(195, 203, 241);
+          "
+        />
+      </p>
 
-        <p class="mb-4 justify-content-center"><img
-                src="https://avatars3.githubusercontent.com/u/59553649?s=400&u=b369df2856234999cda364767954100ccfa86f2b&v=4"
-                style="width: 200px;border-radius:100px; border:15px solid rgb(195, 203, 241);"></p>
+      <h1 style="color: #222222;" class="mt-2">
+        <strong>Satish Bonam&nbsp;</strong>
+      </h1>
 
-        <h1 style="color: #222222;" class="mt-2"><strong>Satish Bonam&nbsp;</strong></h1>
+      <h5 class="text-muted mt-3"><strong>Full Stack Developer</strong></h5>
 
-        <h5 class="text-muted mt-3"><strong>Full Stack Developer</strong></h5>
+      <ul class="list-inline mt-3 mb-4 m-1">
+        <li class="list-inline-item text-muted">
+          <i class="fa fa-phone" style="color: #5c73ea; margin: 5px;"></i
+          ><strong>&nbsp;+91 8500 505 795 &nbsp;</strong>
+        </li>
+        <li class="list-inline-item m-1 text-muted" type="email">
+          <i class="fa fa-envelope" style="color: #5c73ea;"></i
+          ><a
+            href="https://mail.google.com/mail/u/0/?tab=rm0&amp;ogbl#inbox"
+            target="_blank"
+            ><strong class="text-muted"
+              >&nbsp; satish.b.s.kumar@gmail.com</strong
+            ></a
+          >
+        </li>
+        <li class="list-inline-item text-muted m-1">
+          <i class="fa fa-map-marker" style="color: #5c73ea;"></i
+          ><strong>&nbsp; Bangalore, India</strong>
+        </li>
+        &nbsp;
+        <li class="list-inline-item">
+          <a
+            href="https://drive.google.com/file/d/1UaYi_TYryZZwC02_Zz_Z715rWse2Vdjs/view?usp=sharing"
+            target="blank"
+            class="text-white"
+          >
+            <button class="btn btn-primary text-white">
+              Resume
+            </button>
+          </a>
+        </li>
+      </ul>
 
-        <ul class="list-inline mt-3 mb-4 m-1">
-            <li class="list-inline-item text-muted"><i class="fa fa-phone"
-                    style="color: #5C73EA; margin: 5px;"></i><strong>&nbsp;+91
-                    8500 505 795 &nbsp;</strong></li>
-            <li class="list-inline-item m-1 text-muted" type="email"><i class="fa fa-envelope"
-                    style="color: #5C73EA;"></i><a href="https://mail.google.com/mail/u/0/?tab=rm0&amp;ogbl#inbox"
-                    target="_blank"><strong class="text-muted">&nbsp; satish.b.s.kumar@gmail.com</strong></a></li>
-            <li class="list-inline-item text-muted m-1"><i class="fa fa-map-marker"
-                    style="color: #5C73EA;"></i><strong>&nbsp; Bangalore, India</strong></li>&nbsp;
-            <li class="list-inline-item">
-                <a href="assets/Satish's Resume.pdf" target="blank" class="text-white">
-                    <button class="btn btn-primary text-white">
-                        Resume
-                    </button>
-                </a>
-            </li>
-        </ul>
+      <ul class="list-inline mt-3 mb-4 m-1">
+        <li class="list-inline-item m-1 text-muted" type="email">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/satish-bonam-5836b260/"
+            alt="Linkedin"
+            target="blank"
+          >
+            <img
+              src="assets/Social/facebook.png"
+              style="width: 90px; padding: 12px;"
+            />
+          </a>
+        </li>
+        <li class="list-inline-item text-muted m-1">
+          <a
+            target="_blank"
+            href="https://github.com/satishbonam"
+            alt=" GitHub"
+            target="blank"
+          >
+            <img
+              src="assets/Social/github.png"
+              style="width: 90px; padding: 12px;"
+            />
+          </a>
+        </li>
+        &nbsp;
+        <li class="list-inline-item m-1 text-muted" type="email">
+          <a
+            target="_blank"
+            href="https://twitter.com/satish__bonam"
+            alt="Twitter"
+            target="blank"
+          >
+            <img
+              src="assets/Social/twitter.png"
+              style="width: 90px; padding: 12px;"
+            />
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a
+            target="_blank"
+            href="https://www.hackerrank.com/satish_b_s_kumar"
+            alt="Hackerrank"
+            target="blank"
+          >
+            <img
+              src="assets/Social/HackerRank.png"
+              style="width: 90px; padding: 12px;"
+            />
+          </a>
+        </li>
+      </ul>
+      <hr />
 
-        <ul class="list-inline mt-3 mb-4 m-1">
-            <li class="list-inline-item m-1 text-muted" type="email">
-                <a href="https://www.linkedin.com/in/satish-bonam-5836b260/" alt="Linkedin" target="blank">
-                    <img src="assets/Social/facebook.png" style="width:90px;padding: 12px;">
-                </a>
-            </li>
-            <li class="list-inline-item text-muted m-1">
-                <a href="https://github.com/satishbonam" alt=" GitHub" target="blank">
-                    <img src="assets/Social/github.png" style="width: 90px;padding: 12px;">
-                </a>
-            </li>&nbsp;
-            <li class="list-inline-item m-1 text-muted" type="email">
-                <a href="https://twitter.com/satish__bonam" alt="Twitter" target="blank">
-                    <img src="assets/Social/twitter.png" style="width: 90px;padding: 12px;">
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://www.hackerrank.com/satish_b_s_kumar" alt="Hackerrank" target="blank">
-                    <img src="assets/Social/HackerRank.png" style="width: 90px;padding: 12px;">
-                </a>
-            </li>
-        </ul>
-        <hr>
+      <p class="text-center" style="font-family: 'Montserrat', sans-serif;">
+        "A passionate aspiring Full Stack Developer skilled in MERN stack,
+        moulded and shaped by Masai School's numerous training. <br />Passion
+        and diligence are two traits that I believe most reflect me as an
+        individual. I’ve been faced with many challenges.<br />
+        Without enthusiasm, patience and some degree of positivity, we cannot
+        bring about the change that is needed to a better life!<br />Actively
+        ready to join in a great lively team of a good start-up to adapt me in
+        any situation and environment with ease and perform the best."
+      </p>
 
-        <p class="text-center" style="font-family: 'Montserrat', sans-serif;">"A passionate aspiring Full
-            Stack Developer skilled in MERN stack, moulded and shaped by Masai School's numerous training. <br>Passion
-            and diligence are two traits that I believe most
-            reflect me as an individual. I’ve been faced with many challenges.<br> Without enthusiasm, patience and some
-            degree of positivity, we cannot bring about the change that is needed to a better life!<br>Actively ready to
-            join in a great lively team of a good start-up to adapt me in any situation and environment with ease and
-            perform the best."
-        </p>
-
-        <div class="row mt-5 bg-light pt-3">
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/html5.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>HTML5</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/git.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>GitHub</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/bootstrap.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>Bootstrap</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/javascript.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>JavaScript</small>
-            </div>
+      <div class="row mt-5 bg-light pt-3">
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/html5.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>HTML5</small>
         </div>
-
-        <div class="row  bg-light pt-3">
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/languages/css.png"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>CSS</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/react.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>React</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/python.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>Python</small>
-            </div>
-            <div class="col-6 col-lg-3 mb-3"><img class="rounded-circle shadow" src="assets/flask.svg"
-                    style="background-color: #5b73ea;width: 111px;padding: 12px;">
-                <br>
-                <small>Flask</small>
-            </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/git.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>GitHub</small>
         </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/bootstrap.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>Bootstrap</small>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/javascript.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>JavaScript</small>
+        </div>
+      </div>
 
+      <div class="row bg-light pt-3">
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/languages/css.png"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>CSS</small>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/react.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>React</small>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/python.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>Python</small>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+          <img
+            class="rounded-circle shadow"
+            src="assets/flask.svg"
+            style="background-color: #5b73ea; width: 111px; padding: 12px;"
+          />
+          <br />
+          <small>Flask</small>
+        </div>
+      </div>
     </div>
-    </div>
-
 
     <div class="mt-5 mb-5"></div>
 
     <div class="mt-5 mb-5"></div>
-    <hr>
+    <hr />
 
-    <div class="mb-5 mt-5">
-        <div class="mb-5">
-            <h2 class="text-center"><strong>Proficiency</strong></h2>
-        </div>
+    <div class="mb-5 mt-5" id="proficiency">
+      <div class="mb-5">
+        <h2 class="text-center"><strong>Proficiency</strong></h2>
+      </div>
 
-        <div class="mt-4">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-3"><img alt="React" class="mb-2" src="assets/react-brands-1.svg"
-                            style="width: 93px;">
-                        <h4 class="text-muted mb-3"><strong>React Apps</strong></h4>
-                    </div>
-
-                    <div class="col-md-3"><img alt="Frontend" class="mb-2" src="assets/Vector (2).svg"
-                            style="width: 93px;">
-                        <h4 class="text-muted mb-3"><strong>Front-End</strong><br></h4>
-                    </div>
-
-                    <div class="col-md-3"><img alt="Frontend" class="mb-2" src="assets/Vector.svg" style="width: 93px;">
-                        <h4 class="text-muted mb-3"><strong>Back-End</strong><br></h4>
-                    </div>
-
-                    <div class="col-md-3"><img alt="Data Structure" class="mb-4" src="assets/Vector (1).svg"
-                            style="width: 93px;">
-                        <h4 class="text-muted mb-3 mt-3"><strong>Data Structures</strong><br></h4>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-5 bg-light pt-1 pb-5">
-        <h2 class="text-center mt-5 mb-5"><strong>Projects</strong></h2>
+      <div class="mt-4">
         <div class="container text-center">
-            <div class="row">
-                <div class="col-md-12 mb-1">
-                    <div class="card">
-                        <div class="card-body shadow"><img class="img-fluid mb-3 border"
-                                style="height: 200px; width:500px" src="https://imgur.com/RpyHSrv.png">
-                            <h4 class="card-title"><strong>Point of Sale Application(POS)</strong></h4>
-                            <h6 class="text-muted card-subtitle mb-2">Full Stack Application with both Front-End and
-                                Back-End</h6>
-                            <p class="card-text">This project is made using React,Redux,Flask and MySQL.
-                            </p>
-                            <a class="card-link text-muted" href="https://github.com/satishbonam/point-of-sale-App">
-                                <i class="fa fa-github"></i>&nbsp;<strong>Github Link&nbsp;</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-1">
-                    <div class="card">
-                        <div class="card-body shadow"><img class="img-fluid mb-3 border"
-                                style="height: 200px; width:500px" src="assets/projects/chess.png">
-                            <h4 class="card-title"><strong>Chess Game</strong></h4>
-                            <h6 class="text-muted card-subtitle mb-2">First Project on Javascript</h6>
-                            <p class="card-text">This project is made using basic javascript concepts with Html and CSS.
-                            </p>
-                            <a class="card-link text-muted" href="https://github.com/satishbonam/masai-sprint-2">
-                                <i class="fa fa-github"></i>&nbsp;<strong>Github Link&nbsp;</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-1">
-                    <div class="card">
-
-                        <div class="card-body shadow"><img class="img-fluid mb-3" style="height: 200px; width:500px"
-                                src="assets/projects/calenderIndex.png">
-
-                            <h4 class="card-title"><strong>Calender Index</strong></h4>
-
-                            <h6 class="text-muted card-subtitle mb-2">Project on API</h6>
-
-                            <p class="card-text">
-                                A website build using API of Calender Index to get hollidays/Events.
-                            </p>
-
-                            <a class="card-link text-secondary" href="https://github.com/satishbonam/masai-sprint-3">
-                                <i class="fa fa-github"></i>&nbsp;<strong>Github Link&nbsp;</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-1">
-                    <div class="card ">
-
-                        <div class="card-body shadow"><img class="img-fluid mb-3" style="height: 225px; width:500px"
-                                src="assets/projects/shopDogs.png">
-
-                            <h4 class="card-title"><strong>Shop Dogs App</strong></h4>
-
-                            <h6 class="text-muted card-subtitle mb-2">Frontend Project</h6>
-
-                            <p class="card-text">Shop Dogs E-Commerce Application created using React
-                            </p>
-
-                            <a class="card-link text-muted" href="https://github.com/satishbonam/masai-sprint-5">
-                                <i class="fa fa-github"></i><strong>&nbsp;Github Link&nbsp;</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+          <div class="row">
+            <div class="col-md-3">
+              <img
+                alt="React"
+                class="mb-2"
+                src="assets/react-brands-1.svg"
+                style="width: 93px;"
+              />
+              <h4 class="text-muted mb-3"><strong>React Apps</strong></h4>
             </div>
+
+            <div class="col-md-3">
+              <img
+                alt="Frontend"
+                class="mb-2"
+                src="assets/Vector (2).svg"
+                style="width: 93px;"
+              />
+              <h4 class="text-muted mb-3"><strong>Front-End</strong><br /></h4>
+            </div>
+
+            <div class="col-md-3">
+              <img
+                alt="Frontend"
+                class="mb-2"
+                src="assets/Vector.svg"
+                style="width: 93px;"
+              />
+              <h4 class="text-muted mb-3"><strong>Back-End</strong><br /></h4>
+            </div>
+
+            <div class="col-md-3">
+              <img
+                alt="Data Structure"
+                class="mb-4"
+                src="assets/Vector (1).svg"
+                style="width: 93px;"
+              />
+              <h4 class="text-muted mb-3 mt-3">
+                <strong>Data Structures</strong><br />
+              </h4>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <div class="mb-5 bg-light pt-1 pb-5" id="Projects">
+      <h2 class="text-center mt-5 mb-5"><strong>Projects</strong></h2>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-6 mb-1">
+            <div class="card-body shadow">
+              <img
+                class="img-fluid mb-3 border"
+                style="height: 200px; width: 500px;"
+                src="https://imgur.com/Gm9kLXk.png"
+              />
+              <h4 class="card-title"><strong>OYO Rooms Clone</strong></h4>
+              <h6 class="text-muted card-subtitle mb-2">
+                Full Stack Application with both Front-End and
+                Back-End,integrating payment gateway,google maps,OAuth,OTP
+                authentication
+              </h6>
+              <p class="card-text">
+                This project is made using React,Redux,Flask and MySQL.
+              </p>
+              <a
+                class="card-link text-muted"
+                target="_blank"
+                href="https://github.com/satishbonam/eyo-rooms"
+              >
+                <i class="fa fa-github"></i>&nbsp;<strong
+                  >Github Link&nbsp;</strong
+                >
+              </a>
+              <a
+                class="card-link text-muted"
+                target="_blank"
+                href="https://eyo.satishbonam.tech"
+              >
+                <i class="fa fa-chevron-circle-right"></i>&nbsp;<strong
+                  >Live&nbsp;</strong
+                >
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 mb-1">
+            <div class="card">
+              <div class="card-body shadow">
+                <img
+                  class="img-fluid mb-3 border"
+                  style="height: 200px; width: 500px;"
+                  src="https://imgur.com/RpyHSrv.png"
+                />
+                <h4 class="card-title">
+                  <strong>Point of Sale Application(POS)</strong>
+                </h4>
+                <h6 class="text-muted card-subtitle mb-2">
+                  Full Stack Application with both Front-End and Back-End,having
+                  vendor,admin,employee login's and showed stats using charts
+                </h6>
+                <p class="card-text">
+                  This project is made using React,Redux,Flask and MySQL.
+                </p>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://github.com/satishbonam/point-of-sale-App"
+                >
+                  <i class="fa fa-github"></i>&nbsp;<strong
+                    >Github Link&nbsp;</strong
+                  >
+                </a>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://pos.satishbonam.tech"
+                >
+                  <i class="fa fa-chevron-circle-right"></i>&nbsp;<strong
+                    >Live&nbsp;</strong
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-1">
+            <div class="card">
+              <div class="card-body shadow">
+                <img
+                  class="img-fluid mb-3 border"
+                  style="height: 200px; width: 500px;"
+                  src="assets/projects/chess.png"
+                />
+                <h4 class="card-title"><strong>Chess Game</strong></h4>
+                <h6 class="text-muted card-subtitle mb-2">
+                  First Project on Javascript
+                </h6>
+                <p class="card-text">
+                  This project is made using basic javascript concepts with Html
+                  and CSS.
+                </p>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://github.com/satishbonam/masai-sprint-2"
+                >
+                  <i class="fa fa-github"></i>&nbsp;<strong
+                    >Github Link&nbsp;</strong
+                  >
+                </a>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://chess.satishbonam.tech"
+                >
+                  <i class="fa fa-chevron-circle-right"></i>&nbsp;<strong
+                    >Live&nbsp;</strong
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-1">
+            <div class="card">
+              <div class="card-body shadow">
+                <img
+                  class="img-fluid mb-3"
+                  style="height: 200px; width: 500px;"
+                  src="assets/projects/calenderIndex.png"
+                />
+
+                <h4 class="card-title"><strong>Calender Index</strong></h4>
+
+                <h6 class="text-muted card-subtitle mb-2">Project on API</h6>
+
+                <p class="card-text">
+                  A website build using API of Calender Index to get
+                  hollidays/Events.
+                </p>
+
+                <a
+                  class="card-link text-secondary"
+                  target="_blank"
+                  href="https://github.com/satishbonam/masai-sprint-3"
+                >
+                  <i class="fa fa-github"></i>&nbsp;<strong
+                    >Github Link&nbsp;</strong
+                  >
+                </a>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://calender-index.satishbonam.tech"
+                >
+                  <i class="fa fa-chevron-circle-right"></i>&nbsp;<strong
+                    >Live&nbsp;</strong
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-1">
+            <div class="card">
+              <div class="card-body shadow">
+                <img
+                  class="img-fluid mb-3"
+                  style="height: 225px; width: 500px;"
+                  src="assets/projects/shopDogs.png"
+                />
+
+                <h4 class="card-title"><strong>Shop Dogs App</strong></h4>
+
+                <h6 class="text-muted card-subtitle mb-2">Frontend Project</h6>
+
+                <p class="card-text">
+                  Shop Dogs E-Commerce Application created using React
+                </p>
+
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://github.com/satishbonam/masai-sprint-5"
+                >
+                  <i class="fa fa-github"></i
+                  ><strong>&nbsp;Github Link&nbsp;</strong>
+                </a>
+                <a
+                  class="card-link text-muted"
+                  target="_blank"
+                  href="https://shop-dogs.satishbonam.tech"
+                >
+                  <i class="fa fa-chevron-circle-right"></i>&nbsp;<strong
+                    >Live&nbsp;</strong
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 container" id="Statics">
+      <h2 class="text-muted font-weight-bold">Statics</h2>
+      <div
+        class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-md-around mt-5 pt-3"
+      >
+        <div class="mt-3">
+          <h1 class="static-div rounded-circle pt-5">1200+</h1>
+          <p class="mt-3 font-weight-bold h5">Hours Of Coding</p>
+        </div>
+        <div class="mt-3">
+          <h1 class="static-div rounded-circle pt-5 ml-4">500+</h1>
+          <p class="mt-3 font-weight-bold h5">Data Structure Problems</p>
+        </div>
+        <div class="mt-3">
+          <h1 class="static-div rounded-circle pt-5">500+</h1>
+          <p class="mt-3 font-weight-bold h5">Commits on Github</p>
+        </div>
+        <div class="mt-3">
+          <h1 class="static-div rounded-circle pt-5">100+</h1>
+          <p class="mt-3 font-weight-bold h5">Hours Of soft Skills</p>
+        </div>
+      </div>
     </div>
 
     <div class="mt-5 mb-5"></div>
 
-    <section>
-        <center>
-            <div>
-                <div class="col-lg-2"></div>
-                <div class="shadow-none bg-light rounded col-lg-8 col-md-12 col-sm-12" style="margin-bottom: 100px">
-                    <div class="calendar">
-                        GitHub Calendar:
-                    </div>
-                </div>
+    <section class="bg-light m-2" id="Github">
+      <center>
+        <div>
+          <div class="col-lg-2"></div>
+          <div
+            class="shadow-none bg-light rounded col-lg-8 col-md-12 col-sm-12"
+            style="margin-bottom: 100px;"
+          >
+            <div class="calendar">
+              GitHub Calendar:
             </div>
-        </center>
+          </div>
+        </div>
+      </center>
 
-        <script type="text/javascript">
-            GitHubCalendar(".calendar", "satishbonam", {
-                responsive: true
-            });
-        </script>
+      <script type="text/javascript">
+        GitHubCalendar(".calendar", "satishbonam", {
+          responsive: true,
+        });
+      </script>
     </section>
-
-
-</body>
-
+  </body>
 </html>
